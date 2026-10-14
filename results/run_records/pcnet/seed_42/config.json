@@ -1,0 +1,194 @@
+{
+  "created_at": "2026-09-28T08:25:02+08:00",
+  "protocol_version": 6,
+  "experiment": "pcnet",
+  "experiment_spec": {
+    "key": "pcnet",
+    "label": "PCNet",
+    "challenge_perception": false,
+    "rspr": false
+  },
+  "reference_protocol_deviations": {},
+  "initialization": {
+    "fresh": true,
+    "trained_pcnet_checkpoint_loaded": false,
+    "swin_checkpoint": {
+      "bytes": 450809979,
+      "sha256": "70812ab6b0a7a38712409d13976df9431632466eaacf991d5e90d9a1e91f3ab1"
+    },
+    "ihn_checkpoint": {
+      "bytes": 5251209,
+      "sha256": "c55099329e3aed81a419ee9e1daf8b4d51f9cbbdd3f7eab44b25582acc5e4ba2"
+    },
+    "load_report": {
+      "rgb_swin": {
+        "matched_tensors": 362,
+        "missing_count": 0,
+        "unexpected_count": 2,
+        "missing_examples": [],
+        "unexpected_examples": [
+          "head.weight",
+          "head.bias"
+        ]
+      },
+      "thermal_swin": {
+        "matched_tensors": 362,
+        "missing_count": 0,
+        "unexpected_count": 2,
+        "missing_examples": [],
+        "unexpected_examples": [
+          "head.weight",
+          "head.bias"
+        ]
+      },
+      "ihn": {
+        "matched_tensors": 52,
+        "missing_count": 24,
+        "unexpected_count": 0,
+        "missing_examples": [
+          "fnet1.Adapter1.conv_sem.weight",
+          "fnet1.Adapter1.conv_sem.bias",
+          "fnet1.Adapter1.D_fc1.weight",
+          "fnet1.Adapter1.conv_space.weight",
+          "fnet1.Adapter1.conv_space.bias",
+          "fnet1.Adapter1.channel_fc1.weight",
+          "fnet1.Adapter1.channel_fc2.weight",
+          "fnet1.Adapter1.D_fc2.weight",
+          "fnet1.Adapter2.conv_sem.weight",
+          "fnet1.Adapter2.conv_sem.bias",
+          "fnet1.Adapter2.D_fc1.weight",
+          "fnet1.Adapter2.conv_space.weight",
+          "fnet1.Adapter2.conv_space.bias",
+          "fnet1.Adapter2.channel_fc1.weight",
+          "fnet1.Adapter2.channel_fc2.weight",
+          "fnet1.Adapter2.D_fc2.weight",
+          "fnet1.Adapter3.conv_sem.weight",
+          "fnet1.Adapter3.conv_sem.bias",
+          "fnet1.Adapter3.D_fc1.weight",
+          "fnet1.Adapter3.conv_space.weight"
+        ],
+        "unexpected_examples": []
+      }
+    }
+  },
+  "data": {
+    "train_samples": 10000,
+    "test_samples": 10000,
+    "train_stem_sha256": "d2bb92b5f162d85b42166fb8cc58df84acda26cce4801d0aaf6ef070b671593e",
+    "test_stem_sha256": "bb2754b3cadf20184b487431a1cde8ae9ca462ef738a25b42cf4d8dadd60f446",
+    "train_test_overlap": 0,
+    "attribute_file": null,
+    "boundary_supervision": null
+  },
+  "optimization": {
+    "optimizer": "AdamW",
+    "learning_rate": 1e-05,
+    "weight_decay": 0.0001,
+    "batch_size": 4,
+    "batches_per_epoch": 2500,
+    "optimizer_steps_per_epoch": 2500,
+    "planned_optimizer_steps": 200000,
+    "epochs": 80,
+    "scheduler": null,
+    "gradient_clipping": "element-wise clamp",
+    "clip": 0.5,
+    "drop_last": true
+  },
+  "loss": {
+    "saliency": "BCEWithLogits + released SoftDice + Smoothness",
+    "attribute_weight": 0.0,
+    "coarse_weight": 0.0,
+    "edge_weight": 0.0
+  },
+  "model_selection": {
+    "dataset": "UVT20K/Test",
+    "metric": "minimum MAE",
+    "epochs": [
+      1,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80
+    ]
+  },
+  "parameters": {
+    "total": 322769552,
+    "trainable": 321461582,
+    "innovations": {
+      "cph": 0,
+      "rspr": 0
+    }
+  },
+  "model_config": {
+    "experiment": "pcnet",
+    "seed": 42,
+    "num_attributes": 15,
+    "attribute_hidden_dim": 256,
+    "dropout": 0.1,
+    "rspr_channels": 64,
+    "rspr_grid_size": 2,
+    "rspr_confidence_gamma": 4.0,
+    "rspr_epsilon": 1e-06,
+    "activation_checkpoint": false,
+    "gpu_id": 0,
+    "mixed_precision": false,
+    "ihn_lev0": true,
+    "ihn_lev1": false,
+    "ihn_weight": false
+  },
+  "arguments": {
+    "epochs": 80,
+    "batch_size": 4,
+    "image_size": 384,
+    "num_workers": 4,
+    "gpu_id": 0,
+    "seed": 42,
+    "learning_rate": 1e-05,
+    "weight_decay": 0.0001,
+    "clip": 0.5,
+    "mixed_precision": false,
+    "activation_checkpoint": false,
+    "no_pin_memory": false,
+    "attribute_loss_weight": 0.1,
+    "coarse_loss_weight": 0.25,
+    "edge_loss_weight": 0.2,
+    "edge_dilation": 3,
+    "edge_positive_weight_cap": 20.0,
+    "attribute_hidden_dim": 256,
+    "dropout": 0.1,
+    "rspr_channels": 64,
+    "rspr_grid_size": 2,
+    "rspr_confidence_gamma": 4.0,
+    "log_every": 50,
+    "smoke_test": false,
+    "allow_nonstandard_dataset_size": false,
+    "run_name": null,
+    "experiment": "pcnet"
+  },
+  "environment": {
+    "host": "autodl-container-1f554fbcbc-a855416b",
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "world_size": 1
+  }
+}

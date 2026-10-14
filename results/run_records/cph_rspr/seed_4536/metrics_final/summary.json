@@ -1,0 +1,93 @@
+{
+  "created_at": "2026-10-12T01:30:46+08:00",
+  "metric_names": [
+    "em",
+    "sm",
+    "adpfm",
+    "wfm",
+    "mae"
+  ],
+  "metadata": {},
+  "datasets": {
+    "UVT20K": {
+      "status": "completed",
+      "samples": 10000,
+      "inference": {
+        "samples": 10000,
+        "seconds": 1662.390689611435,
+        "fps": 6.0154331123794895
+      },
+      "metrics": {
+        "em": 0.9152,
+        "sm": 0.8813,
+        "adpfm": 0.8446,
+        "wfm": 0.8256,
+        "mae": 0.0372
+      }
+    },
+    "UVT2000": {
+      "status": "completed",
+      "samples": 2000,
+      "inference": {
+        "samples": 2000,
+        "seconds": 386.17497396469116,
+        "fps": 5.178999507572607
+      },
+      "metrics": {
+        "em": 0.8458,
+        "sm": 0.8156,
+        "adpfm": 0.7061,
+        "wfm": 0.685,
+        "mae": 0.0457
+      }
+    },
+    "VT5000-Test_unalign": {
+      "status": "completed",
+      "samples": 2500,
+      "inference": {
+        "samples": 2500,
+        "seconds": 353.6541585922241,
+        "fps": 7.069053026130507
+      },
+      "metrics": {
+        "em": 0.9362,
+        "sm": 0.8885,
+        "adpfm": 0.8751,
+        "wfm": 0.8529,
+        "mae": 0.0312
+      }
+    },
+    "VT1000_unalign": {
+      "status": "completed",
+      "samples": 1000,
+      "inference": {
+        "samples": 1000,
+        "seconds": 133.31540060043335,
+        "fps": 7.501008851911663
+      },
+      "metrics": {
+        "em": 0.9683,
+        "sm": 0.9316,
+        "adpfm": 0.9193,
+        "wfm": 0.918,
+        "mae": 0.019
+      }
+    },
+    "VT821_unalign": {
+      "status": "completed",
+      "samples": 821,
+      "inference": {
+        "samples": 821,
+        "seconds": 111.13575744628906,
+        "fps": 7.387361357543112
+      },
+      "metrics": {
+        "em": 0.9384,
+        "sm": 0.8978,
+        "adpfm": 0.8799,
+        "wfm": 0.8639,
+        "mae": 0.0282
+      }
+    }
+  }
+}

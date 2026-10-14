@@ -1,0 +1,45 @@
+{
+  "seed": 42,
+  "candidate_sampling": "up to 120 evenly spaced sorted GT files per dataset; keep GT foreground ratio 2%-80%; rank by paired MAE gain",
+  "selected": [
+    {
+      "dataset": "UVT20K",
+      "relative_root": "UVT20K/Test",
+      "name": "ABC20240605202357",
+      "mode": "improvement",
+      "mae": {
+        "pcnet": 0.14641851715686274,
+        "cph": 0.007934936683006535,
+        "rspr": 0.15444685866013072,
+        "cph_rspr": 0.014893819444444444
+      },
+      "gain": 0.1315246977124183
+    },
+    {
+      "dataset": "VT1000_unalign",
+      "relative_root": "VT1000_unalign",
+      "name": "0244",
+      "mode": "improvement",
+      "mae": {
+        "pcnet": 0.12302904156454249,
+        "cph": 0.07470589511846405,
+        "rspr": 0.07412059589460784,
+        "cph_rspr": 0.07656862745098039
+      },
+      "gain": 0.046460414113562096
+    },
+    {
+      "dataset": "UVT2000",
+      "relative_root": "UVT2000",
+      "name": "132",
+      "mode": "failure",
+      "mae": {
+        "pcnet": 0.08724855535170611,
+        "cph": 0.18897028405681934,
+        "rspr": 0.31990620856191593,
+        "cph_rspr": 0.1928477106530682
+      },
+      "gain": -0.10559915530136207
+    }
+  ]
+}

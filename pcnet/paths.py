@@ -1,0 +1,12 @@
+from pathlib import Path
+
+
+PACKAGE_ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = PACKAGE_ROOT.parent
+DEFAULT_DATA_ROOT = PROJECT_ROOT / "datasets"
+DEFAULT_BACKBONE_ROOT = PROJECT_ROOT / "backbones"
+DEFAULT_SWIN_CHECKPOINT = (
+    DEFAULT_BACKBONE_ROOT / "swin_base_patch4_window12_384_22k.pth"
+)
+DEFAULT_IHN_CHECKPOINT = DEFAULT_BACKBONE_ROOT / "IHN.pth"
+DEFAULT_OUTPUT_ROOT = PROJECT_ROOT / "outputs"
